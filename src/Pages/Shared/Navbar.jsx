@@ -8,6 +8,7 @@ const Navbar = () => {
 
     const navItems = <>
     <li><Link to='/'>Home</Link></li>
+    <li><Link to='/login'>Login</Link></li>
   
     </>
 
