@@ -2,8 +2,8 @@ import img1 from '../../assets/images/banner/1.jpg';
 import img2 from '../../assets/images/banner/2.jpg';
 import img3 from '../../assets/images/banner/3.jpg';
 import img4 from '../../assets/images/banner/4.jpg';
-import img5 from '../../assets/images/banner/5.jpg';
-import img6 from '../../assets/images/banner/6.jpg';
+// import img5 from '../../assets/images/banner/5.jpg';
+// import img6 from '../../assets/images/banner/6.jpg';
 
 
 
@@ -16,6 +16,12 @@ const Banner = () => {
           src={img1}
           className="w-full"
         />
+        <div className="absolute flex  transform -translate-y-1/2 left-5 right-5 bottom-0">
+        <div className='text-white font-extrabold'>
+        <button className="btn btn-outline mr-5 btn-info">Discover more</button>
+        <button className="btn  btn-ghost">Latest Project</button>
+        </div>
+        </div>
         <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
           <a href="#slide4" className="btn mr-6 btn-circle">
             ❮
@@ -30,6 +36,12 @@ const Banner = () => {
           src={img2}
           className="w-full"
         />
+         <div className="absolute flex  transform -translate-y-1/2 left-5 right-5 bottom-0">
+        <div className='text-white font-extrabold'>
+        <button className="btn btn-outline mr-5 btn-info">Discover more</button>
+        <button className="btn  btn-ghost">Latest Project</button>
+        </div>
+        </div>
         <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
           <a href="#slide1" className="btn mr-6 btn-circle">
             ❮
@@ -44,6 +56,12 @@ const Banner = () => {
           src={img3}
           className="w-full"
         />
+         <div className="absolute flex  transform -translate-y-1/2 left-5 right-5 bottom-0">
+        <div className='text-white font-extrabold'>
+        <button className="btn btn-outline mr-5 btn-info">Discover more</button>
+        <button className="btn  btn-ghost">Latest Project</button>
+        </div>
+        </div>
         <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
           <a href="#slide2" className="btn mr-6 btn-circle">
             ❮
@@ -58,6 +76,12 @@ const Banner = () => {
           src={img4}
           className="w-full"
         />
+         <div className="absolute flex  transform -translate-y-1/2 left-5 right-5 bottom-0">
+        <div className='text-white font-extrabold'>
+        <button className="btn btn-outline mr-5 btn-info">Discover more</button>
+        <button className="btn  btn-ghost">Latest Project</button>
+        </div>
+        </div>
         <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
           <a href="#slide3" className="btn mr-6 btn-circle">
             ❮
