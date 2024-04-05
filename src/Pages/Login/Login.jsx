@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 
 const Login = () => {
@@ -55,6 +56,7 @@ const Login = () => {
               </div>
             </form>
           </form>
+          <p className="m-3 p-3">New to Car Doctor? <Link to='/signUp'><button className="btn btn-ghost" >Sign Up</button></Link> </p>
         </div>
       </div>
     </div>
