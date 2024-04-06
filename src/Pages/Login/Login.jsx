@@ -14,9 +14,9 @@ const Login = () => {
           <img src={img} alt="" />
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form onSubmit={handleLogin} className="card-body">
             <h1 className="text-5xl font-bold">Login now!</h1>
-            <form onSubmit={handleLogin}>
+            
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -54,7 +54,7 @@ const Login = () => {
                   value="Login"
                 />
               </div>
-            </form>
+            
           </form>
           <p className="m-3 p-3">New to Car Doctor? <Link to='/signUp'><button className="btn btn-ghost" >Sign Up</button></Link> </p>
         </div>
