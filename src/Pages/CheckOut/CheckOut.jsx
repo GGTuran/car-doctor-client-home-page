@@ -12,7 +12,7 @@ const CheckOut = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const date = form.name.value;
+    const date = form.date.value;
     const email = user?.email;
     const booking = {
       customerName: name,
