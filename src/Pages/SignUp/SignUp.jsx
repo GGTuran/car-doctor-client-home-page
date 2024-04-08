@@ -87,7 +87,7 @@ const SignUp = () => {
                   type="Submit"
                   value="Sign Up"
                 /> */}
-                <input type="submit" value="SignUp" />
+                <input type="submit" className="btn btn-outline btn-warning" value="SignUp" />
               </div>
             
           </form>
