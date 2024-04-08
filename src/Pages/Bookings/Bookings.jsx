@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import BookingRow from "../BookingRow/BookingRow";
@@ -7,7 +8,8 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setBookings(data);
@@ -32,6 +34,28 @@ const Bookings = () => {
     }
   };
 
+  const handleConfirm = id =>{
+    fetch(`http://localhost:5000/bookings/${id}`,{
+        method:'PATCH',
+        headers:{
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({status:'Confirm'})
+    })
+    .then(res=>res.json())
+    .then(data =>{
+        console.log(data);
+        if(data.modifiedCount > 0){
+            // update status
+            const remaining = bookings.filter(booking => booking._id !== id);
+            const updated = bookings.find(booking => booking._id === id);
+            updated.status= 'Confirm'
+            const newBookings = [updated, ...remaining];
+            setBookings(newBookings);
+        }
+    })
+  }
+
   return (
     <div>
       <h1>{bookings.length}</h1>
@@ -55,7 +79,12 @@ const Bookings = () => {
           </thead>
           <tbody>
             {bookings.map((booking) => (
-              <BookingRow key={booking._id} booking={booking} handleDelete={handleDelete}></BookingRow>
+              <BookingRow key={booking._id}
+               booking={booking}
+                handleDelete={handleDelete}
+                handleConfirm={handleConfirm}
+                
+                ></BookingRow>
             ))}
           </tbody>
         </table>
