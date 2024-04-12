@@ -7,6 +7,7 @@ const CheckOut = () => {
   const service = useLoaderData();
   const { _id, title, price, img } = service; 
   const { user } = useContext(AuthContext);
+  
 
   const handleBookService = event =>{
     event.preventDefault();
