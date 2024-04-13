@@ -1,18 +1,23 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+// /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import BookingRow from "../BookingRow/BookingRow";
 import axios from "axios";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 const Bookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  // const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `/bookings?email=${user?.email}`;
+
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
 
-    axios.get(url,{withCredentials:true})
+    axiosSecure.get(url)
     .then(res=>{
       setBookings(res.data);
     })
@@ -22,7 +27,7 @@ const Bookings = () => {
     //   .then((data) => {
     //     setBookings(data);
     //   });
-  }, []);
+  }, [url]);
 
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure you wanna delete");
